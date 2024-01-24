@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'WorkSans';
+    src: url('/assets/fonts/static/WorkSans-Regular.ttf');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'WorkSans';
+    src: url('/assets/fonts/static/WorkSans-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    src: url('/assets/fonts/static/WorkSans-SemiBold.ttf');
+    font-weight: 900;
+}
+
+body{
+    background-color: #F7EEFE;
+    padding: 0;
+    margin: 0;
+    font-family: 'WorkSans', sans-serif;
+    font-weight: normal;
+}
+
+.faq-container{
+    position: relative;
+    height: 52em;
+}
+
+.faq-container--bg:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-image: url('/assets/images/background-pattern-desktop.svg');
+    background-size: cover;
+}
+
+.faq-wrap {
+    max-width: 550px;
+    width: 80%;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    font-size: 46px;
+}
+
+h1:before{
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 41px;
+    background-image: url('/assets/images/icon-star.svg');
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.faq-item {
+    border-bottom: 1px solid #efecec;
+    margin-bottom: 10px;
+}
+
+.faq-item:last-child{
+    border: none;
+}
+
+.faq-question {
+    cursor: pointer;
+}
+
+.faq-question h3{
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-question h3:hover{
+    color: #AD28EB;
+}
+
+.faq-question h3:after{
+    content: '';
+    display: inline-block;
+    background-image: url('/assets/images/icon-plus.svg');
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: -5px;
+}
+
+.faq-answer {
+    display: none;
+    color: #607d8b;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question:hover h3:after,
+.faq-item.active .faq-question h3:after{
+    background-image: url('/assets/images/icon-minus.svg');
+}
+
+@media (max-width: 600px){
+    .faq-wrap{
+        padding: 20px 25px;
+    }
+
+    h1{
+        font-size: 34px;
+    }
+}
